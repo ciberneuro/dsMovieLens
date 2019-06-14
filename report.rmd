@@ -62,7 +62,7 @@ edx <- movielens[-test_index,]
 temp <- movielens[test_index,]
 ```
 
-Then we set the validation set as the ratings in the temporal set that has it's users and movies also in the train set, and the rest of the ratings are added to the train set
+Then we define the validation set as the entries in the temporal set that have it's users and movies also in the train set. After that, we put the rest of the entries in the train set
 ```{r message=FALSE, warning=FALSE}
 validation <- temp %>% 
   semi_join(edx, by = "movieId") %>%
